@@ -1,6 +1,6 @@
 # cpp
 
-<b>bài tập môn <i style="color:blue">Cấu trúc dữ liệu và giải thuật</i>, lập trình hướng đối tượng</b>
+<b>bài tập môn <i>Cấu trúc dữ liệu và giải thuật</i>, <i>Lập trình hướng đối tượng</i></b>
 
 code by <a href="https://fb.me/kha1999">Nguyễn Hoàng Kha</a>
 
