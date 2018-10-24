@@ -1,29 +1,36 @@
-//loi
-//system eror
-
 #include <iostream>
 using namespace std;
+
 main(){
-	float a[30], x;
-	int n, i;
-	do{
-	   cout<<"nhap n:";
-	   cin>>n;
-	} while(n>30 || n<1);
-	for(i=0; i<n; i++){
-		cout<<"nhap day sap xep tang dan: ";
-		cin>>a[i];
-	}
-	cout<<"nhap x: ";
+	float day[10] = {1,2,3,5,6,7,8,9}, x;
+	int len = 8, i, j;
+	
+	//in day ban dau da sap xep
+
+	cout<<"day da sap xep :";
+	for(i = 0; i<len; i++)
+		cout<<day[i];
+		
+	//nhap phan tu can chen
+	cout<<endl<<"nhap x: ";
 	cin>>x;
-	for(i=n-1; i>x-1; i--){
-		a[i+1]=a[i];
+
+	j=len-1;
+	//lap tu len-1 den khi nao co phan tu <= x thi dung lai, lui phan tu ra phia sau day
+	while(day[j]>x){
+		day[j+1]=day[j];
+		j--;
 	}
-	a[i]=x;
-	n++;
-	cout<<"day : "<<endl;
-	for(i=0; i<n; i++)
-		cout<<a[i]<<"\t";
+	//gan x
+	day[j+1]=x;
+	
+	//tang tong so phan tu len
+	len++;
+	
+	//in day 
+	cout<<"kq: ";
+	for(i = 0; i<len; i++)
+		cout<<day[i];
 
 }
 
