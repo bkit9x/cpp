@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+main(){
+	   char str[64];
+	   int count=0, i;
+	   cout<<"nhap chuoi: ";
+	   cin.getline(str, 64);
+		cout<<"vi tri xuat hien: \n";
+	   for(i=0; i<strlen(str); i++)
+	   		if(str[i]=='a'){
+	   			cout<<i<<'\t';
+	   			count++;
+			}
+	   	cout<<"\nso lan xuat hien: "<<count;
+}
