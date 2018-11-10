@@ -1,7 +1,7 @@
 /**************************************************
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!		code by Nguyen Hoang Kha aka hkit		  !!
-!!				https://fb.me/kha1999			  !!
+!!______code by Nguyen Hoang Kha aka hkit_________!!
+!!____________https://fb.me/kha1999_______________!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ***************************************************/
 
@@ -68,6 +68,18 @@ Position Locate(ElementType X, List L)
 		else
 			P=P->Next;
 	return P->Next;
+}
+
+Position merge(Position p, Position q)
+{
+    if (p == NULL) return q;
+    if (q == NULL) return p;
+    if (p->Element > q->Element)
+    {
+		p->Next = merge(p->Next, q);
+        return p;
+    }
+    else return merge(q,p);
 }
 
 Position Next(Position P, List L)
@@ -151,19 +163,44 @@ void Sort(List &L, bool asc = true){
 }
 
 main(){
-	List L;
+	List L, L1, L2, Temp;
 	Position P, Q;
 	ElementType X;
+	int i,j;
 	MakeNullList(L);
+/*
+	//a sap xep dang sach tang dan
 	cout<<"---------nhap danh sach lien ket-----------\n";
 	ReadList(L);
 	cout<<"---------In danh sach lien ket--------\n";
 	PrintList(L);
 	Sort(L);
-	cout<<"\n---------In danh sach lien ket--------\n";
+	cout<<"\n---------Danh sach lien ket da sap xep--------\n";
 	PrintList(L);
+*/
+	//b tron 2 danh sach giam dan thanh 1 danh sach giam dan
+	MakeNullList(L);
+	MakeNullList(L1);
+	MakeNullList(L2);
 	
-		
-
+	cout<<"\n---------nhap danh sach lien ket giam dan 1-----------\n";
+	ReadList(L1);
+	cout<<"\n---------danh sach lien ket vua nhap--------\n";
+	PrintList(L1);
+	cout<<"\n---------nhap danh sach lien ket giam dan 2-----------\n";
+	ReadList(L2);
+	cout<<"\n---------danh sach lien ket vua nhap--------\n";
+	PrintList(L2);
+	/*
+	if(First(L1)<First(L2)){
+		Temp = L1;
+		L1 = L2;
+		L2 = Temp;
+	}
+	L->Element
+	*/
+	L = merge(L1, L2);
+	cout<<"\n---------danh sach lien ket vua gop--------\n";
+	PrintList(L);
 
 }
