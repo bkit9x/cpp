@@ -36,8 +36,9 @@ class Clock{
 
 		void LamTron(){
 			int time = gio*3600+phut*60+giay;
-			Clock result(time/3600%24, time%3600/60, time%60);
-			return result;
+			gio = time/3600%24;
+			phut = time%3600/60;
+			giay = time%60;
 		}
 		
 		Clock Cong(int n){
