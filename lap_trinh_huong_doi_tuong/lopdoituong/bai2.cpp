@@ -31,7 +31,7 @@ class Clock{
 		}
 		
 		void In(){
-			cout<<gio<<" gio "<<phut<<" phut "<<giay<<" giay.\n";
+			cout<<gio<<":"<<phut<<":"<<giay<<"\n";
 		}
 
 		void LamTron(){
