@@ -82,12 +82,10 @@ class PhanSo{
 };
 
 main(){
-	PhanSo a(3,7);
-	PhanSo b(4,9);
-	PhanSo x, y;
+	PhanSo a(3,7), b(4,9), x, y, k, max, Tmp;
+	int i, j, n;
 	x.Nhap();
 	y.Nhap();
-	PhanSo k;
 	k=x.GiaTriNghichDao();
 	
 	cout<<"\nnghich dao cua x: \n";
@@ -98,26 +96,24 @@ main(){
 	k.In();
 	
 	//tong n phan so
-	int n;
 	do{
 		cout<<"\nnhap n:";
 		cin>>n;
 	} while(n<=0);
 	PhanSo day[n];
-	for(int i=0; i<n; i++){
+	for(i=0; i<n; i++){
 		day[i].Nhap();
 	}
 	PhanSo sum(0,1);
-	for(int i=0; i<n; i++){
+	for(i=0; i<n; i++){
 		sum = sum.Cong(day[i]);
 	}
 	cout<<"tong = ";
 	sum.In();
 	
 	//phan so lon nhat
-	PhanSo max;
 	max = day[0];
-	for(int i=1; i<n; i++){
+	for(i=1; i<n; i++){
 		if(day[i].GiaTri()>max.GiaTri())
 			max=day[i];
 	}
@@ -125,9 +121,8 @@ main(){
 	max.In();
 	//sap xep
 	cout<<"\nsap xep: \n";
-	PhanSo Tmp;
-	for(int i=0; i<n-1; i++){
-		for(int j=i+1; j<n; j++){
+	for(i=0; i<n-1; i++){
+		for(j=i+1; j<n; j++){
 			if(day[j].GiaTri()>day[i].GiaTri()){
 				Tmp = day[i];
 				day[i]=day[j];
@@ -136,7 +131,7 @@ main(){
 		}
 	}
 	
-	for(int i=0; i<n; i++){
+	for(i=0; i<n; i++){
 		day[i].In();
 		cout<<"\t";
 	}
