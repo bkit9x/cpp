@@ -13,30 +13,32 @@ class PhanSo{
 			a = tu;
 			b = mau;
 		}
-		void Nhap(){
+		friend istream & operator>>(istream &is, PhanSo ps){
 			do{
 				cout<<"nhap tu so: ";
-				cin>>a;
+				is>>ps.a;
 				cout<<"nhap mau so: ";
-				cin>>b;
-			}while(b==0);
+				is>>ps.b;
+			}while(ps.b==0);
+			return is;
 		}
-		void In(){
-			if(a==0)
-				cout<<0;
+		friend ostream & operator<<(ostream &os, PhanSo &ps){
+			if(ps.a==0)
+				os<<0;
 				else
-					if(b==1)
-						cout<<a;
+					if(ps.b==1)
+						os<<ps.a;
 					else
-						if(b<0)
-							if(a<0)
-								cout<<-1*a<<"/"<<-1*b;
+						if(ps.b<0)
+							if(ps.a<0)
+								os<<-1*ps.a<<"/"<<-1*ps.b;
 							else
-								cout<<-a<<"/"<<-1*b;
+								os<<-ps.a<<"/"<<-1*ps.b;
 						else
-							cout<<a<<"/"<<b;
+							os<<ps.a<<"/"<<ps.b;
 
 		}
+
 		void NghichDao(){
 			a=a+b;
 			b=a-b;
@@ -83,6 +85,9 @@ class PhanSo{
 
 main(){
 	PhanSo a(3,7), b(4,9), k;
+	cin>>k;
+	cout<<endl<<k;
 	k = a+b;
-	k.In();
+	cout<<endl<<k;
+	
 }
