@@ -50,6 +50,8 @@ void PrintList(List L)
 			L=L->Next;
 		}
 }
+
+
 //cau3
 ElementType max(List L)
 {
@@ -80,6 +82,26 @@ void vitrimax(List L)
 	}
 }
 
+//cau 4
+void Ten_Ham(List &L)
+{
+	if(!EmptyList(L)){
+		Position P;
+		P = L->Next;
+		while(P->Next!=NULL && P->Next->Next!=NULL)
+		{
+			if(P->Next->Element < P->Element){
+				Position Temp;
+				Temp=P->Next;
+				P->Next=Temp->Next;
+				delete Temp;
+			}
+			P = P->Next;
+		}
+	}
+}
+
+
 main(){
 	List L;
 	Position P;
@@ -89,6 +111,10 @@ main(){
 	ReadList(L);
 	cout<<"in danh sach lien ket: "<<endl;
 	PrintList(L);
-	cout<<endl;
+	cout<<endl<<"vi tri max: ";
 	vitrimax(L);
+	cout<<endl;	
+	Ten_Ham(L);
+	cout<<"danh sach lien ket tang dan: "<<endl;
+	PrintList(L);
 }

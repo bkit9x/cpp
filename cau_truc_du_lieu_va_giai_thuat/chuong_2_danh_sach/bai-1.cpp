@@ -56,6 +56,14 @@ Position Last(List L)
 		P=P->Next;
 	return P;
 }
+void DeleteList (Position P, List &L){
+	Position Temp;
+	if(P->Next != NULL){
+		Temp=P->Next;
+		P->Next=Temp->Next;
+		delete Temp;
+	}
+}
 
 Position Locate(ElementType X, List L)
 {
