@@ -24,12 +24,38 @@ class Matrix{
 			}
 
 			return os;
+		}
+};
+class Vector{
+	private:
+		double b[20];
+		int n;
+	public:
+		friend istream & operator>>(istream &is, Vector &v){
+			cout<<"Nhap so chieu cua vector: ";
+			cin>>v.n;
+			for(int i=0; i<v.n; i++){
+				cout<<"nhap phan tu thu ["<<i<<"]: ";
+				is>>v.b[i];
+			}			
+			return is;
+		}
+		friend ostream & operator<<(ostream &os, Vector v){
+			for(int i=0; i<v.n; i++){
+					os<<v.b[i]<<'\t';
+			}
+			return os;
 		}		
 };
+
 main(){
 	Matrix m;
 	cout<<"nhap ma tran:\n";
 	cin>>m;
-	cout<<"Ma tran vua nhap:\n"<<m;
+	cout<<"\nMa tran vua nhap:\n"<<m;
+	Vector n;
+	cout<<"\nnhap Vector:\n";
+	cin>>n;
+	cout<<"\nVector vua nhap:\n"<<n;
 	
 }
