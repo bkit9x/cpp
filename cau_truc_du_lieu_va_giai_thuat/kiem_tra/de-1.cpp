@@ -96,7 +96,8 @@ void Ten_Ham(List &L)
 				P->Next=Temp->Next;
 				delete Temp;
 			}
-			P = P->Next;
+			else
+				P = P->Next;
 		}
 	}
 }
