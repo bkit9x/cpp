@@ -85,6 +85,6 @@ main(){
 	ReadList(L);
 	cout<<"\n---------danh sach lien ket vua nhap--------\n";
 	PrintList(L);
-	cout<<"max: "<<TimMax(L);
-    cout<<"co "<<demMax(L);
+	cout<<"max= "<<TimMax(L);
+    cout<<" co "<<demMax(L)<<" phan tu lon nhat";
 }
